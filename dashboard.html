@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeetMind Dashboard</title>
+    <link rel="stylesheet" href="dashboard-styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>📊 MeetMind Dashboard</h1>
+        </header>
+
+        <div id="emptyState" class="card empty-state">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <h2>No Meeting Data Yet</h2>
+            <p>Start recording a Zoom meeting to see your AI-powered insights here</p>
+        </div>
+
+        <div id="dashboard" style="display: none;">
+            <!-- Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-value" id="statDuration">0 min</div>
+                    <div class="stat-label">Duration</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💬</div>
+                    <div class="stat-value" id="statWords">0</div>
+                    <div class="stat-label">Words</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-value" id="statActions">0</div>
+                    <div class="stat-label">Action Items</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-value" id="statDecisions">0</div>
+                    <div class="stat-label">Decisions</div>
+                </div>
+            </div>
+
+            <!-- Action Items -->
+            <div class="card">
+                <h2>✅ Action Items</h2>
+                <div id="actionsList" class="insights-grid"></div>
+            </div>
+
+            <!-- Decisions -->
+            <div class="card">
+                <h2>🎯 Key Decisions</h2>
+                <div id="decisionsList" class="insights-grid"></div>
+            </div>
+
+            <!-- Topics -->
+            <div class="card">
+                <h2>📝 Topics Discussed</h2>
+                <div id="topicsList" class="insights-grid"></div>
+            </div>
+
+            <!-- Transcript -->
+            <div class="card">
+                <h2>📜 Full Transcript</h2>
+                <div id="transcriptList" class="transcript-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+
+</html>
